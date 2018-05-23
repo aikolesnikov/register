@@ -46,7 +46,7 @@ CREATE TABLE `transaction` (
   CONSTRAINT `fk_transaction_ag2` FOREIGN KEY (`agent_2`) REFERENCES `agent` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_transaction_ent1` FOREIGN KEY (`entity_1`) REFERENCES `entity` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_transaction_ent2` FOREIGN KEY (`entity_2`) REFERENCES `entity` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_transaction_op` FOREIGN KEY (`operation_id`) REFERENCES `operation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_transaction_op` FOREIGN KEY (`operation_id`) REFERENCES `operation` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_transaction_reg1` FOREIGN KEY (`register_1`) REFERENCES `register` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_transaction_reg2` FOREIGN KEY (`register_2`) REFERENCES `register` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -70,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-23 18:05:47
+-- Dump completed on 2018-05-23 18:09:33
